@@ -23,7 +23,7 @@ public class CoolingConteiner : Container
             double tmp = _productsList.GetValueOrDefault(substance);
             Console.WriteLine("To low temperature:" + tmp);
         }
-        SeriesNumber = ("KON-C-" + _index++);
+        _seriesNumber = ("KON-C-" + _index++);
         _substance = substance;
         _temerature = temerature;
     }

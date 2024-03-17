@@ -18,36 +18,37 @@ public abstract class Container : IContainer
         _cargoWeight = value;
     }
     */
-    protected double CargoWeight { get; set; }
-    protected double CargoHeight { get; set; }
-    protected double ConteinerWeight { get; set; }
-    protected double Depth { get; set; }
-    protected string SeriesNumber { get; set; }
-    protected double MaxLoad { get; set; }
+    protected double _cargoWeight { get; set; }
+    protected double _cargoHeight { get; set; }
+    protected double _conteinerWeight { get; set; }
+    protected double _depth { get; set; }
+    protected string _seriesNumber { get; set; }
+    protected double _maxLoad { get; set; }
 
     protected Container(double cargoWeight, double cargoHeight, double conteinerWeight, double depth, double maxLoad)
     {
-        CargoWeight = cargoWeight;
-        CargoHeight = cargoHeight;
-        ConteinerWeight = conteinerWeight;
-        Depth = depth;
-        MaxLoad = maxLoad;
+        _cargoWeight = cargoWeight;
+        _cargoHeight = cargoHeight;
+        _conteinerWeight = conteinerWeight;
+        _depth = depth;
+        _maxLoad = maxLoad;
     }
 
     public virtual void Unload()
     {
-        CargoWeight = 0;
+        _cargoWeight = 0;
     }
 
     public virtual void Load(double cargoWeight)
     {
-        if ((CargoWeight + cargoWeight) > MaxLoad)
+        if ((_cargoWeight + cargoWeight) > _maxLoad)
         {
+            Console.WriteLine("To much");
             throw new OverfillException();
         }
         else
         {
-            CargoWeight += cargoWeight;
+            _cargoWeight += cargoWeight;
         }
         
     }

@@ -9,26 +9,26 @@ public class LiquidContainer : Container, IHazardNotifier
     private bool _isDangerous;
     public LiquidContainer(double cargoWeight, double cargoHeight, double conteinerWeight, double depth, double maxLoad, PossibleProducts substance, bool isDangerous) : base(cargoWeight, cargoHeight, conteinerWeight, depth, maxLoad)
     {
-        SeriesNumber = ("KON-L-" + _index++);
+        _seriesNumber = ("KON-L-" + _index++);
         _substance = substance;
         _isDangerous = isDangerous;
     }
 
     public void DangerousSituation()
     {
-        Console.WriteLine("Dangerous Situation: " + SeriesNumber);
+        Console.WriteLine("Dangerous Situation: " + _seriesNumber);
     }
     
 
     public override void Load(double cargoWeight)
     {
-        if (_isDangerous && (CargoWeight + cargoWeight) < MaxLoad / 2)
+        if (_isDangerous && (_cargoWeight + cargoWeight) < _maxLoad / 2)
         {
-            CargoWeight += cargoWeight;
+            _cargoWeight += cargoWeight;
         }
-        else if(!_isDangerous && (CargoWeight + cargoWeight) < MaxLoad * 0.9)
+        else if(!_isDangerous && (_cargoWeight + cargoWeight) < _maxLoad * 0.9)
         {
-            CargoWeight += cargoWeight;
+            _cargoWeight += cargoWeight;
         } 
         else
         {

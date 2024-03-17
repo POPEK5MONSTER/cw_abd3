@@ -10,19 +10,19 @@ public class GasConteiner : Container, IHazardNotifier
 
     public GasConteiner(double cargoWeight, double cargoHeight, double conteinerWeight, double depth, double maxLoad, PossibleProducts substance, double pressure) : base(cargoWeight, cargoHeight, conteinerWeight, depth, maxLoad)
     {
-        SeriesNumber = ("KON-G-" + _index++);
+        _seriesNumber = ("KON-G-" + _index++);
         _substance = substance;
         _pressure = pressure;
     }
 
     public override void Unload()
     {
-        CargoWeight *= 0.05;
+        _cargoWeight *= 0.05;
     }
 
 
     public void DangerousSituation()
     {
-        Console.WriteLine("Dangerous Situation: " + SeriesNumber);
+        Console.WriteLine("Dangerous Situation: " + _seriesNumber);
     }
 }
