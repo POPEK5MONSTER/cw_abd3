@@ -8,8 +8,9 @@ public class GasConteiner : Container, IHazardNotifier
     private Enum _substance { get; set; }
     private double _pressure { get; set; }
 
-    public GasConteiner(double cargoWeight, double cargoHeight, double conteinerWeight, double depth, string seriesNumber, double maxLoad, PossibleProducts substance, double pressure) : base(cargoWeight, cargoHeight, conteinerWeight, depth, seriesNumber, maxLoad)
+    public GasConteiner(double cargoWeight, double cargoHeight, double conteinerWeight, double depth, double maxLoad, PossibleProducts substance, double pressure) : base(cargoWeight, cargoHeight, conteinerWeight, depth, maxLoad)
     {
+        SeriesNumber = ("KON-G-" + _index++);
         _substance = substance;
         _pressure = pressure;
     }

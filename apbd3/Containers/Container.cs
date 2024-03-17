@@ -25,13 +25,12 @@ public abstract class Container : IContainer
     protected string SeriesNumber { get; set; }
     protected double MaxLoad { get; set; }
 
-    protected Container(double cargoWeight, double cargoHeight, double conteinerWeight, double depth, string seriesNumber, double maxLoad)
+    protected Container(double cargoWeight, double cargoHeight, double conteinerWeight, double depth, double maxLoad)
     {
         CargoWeight = cargoWeight;
         CargoHeight = cargoHeight;
         ConteinerWeight = conteinerWeight;
         Depth = depth;
-        SeriesNumber = seriesNumber;
         MaxLoad = maxLoad;
     }
 

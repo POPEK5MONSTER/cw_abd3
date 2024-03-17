@@ -5,5 +5,6 @@ public enum PossibleProducts
     Banana,
     Apple,
     Gasoline,
-    Fuel
+    Fue,
+    Meat
 }

@@ -7,7 +7,7 @@ public class LiquidContainer : Container, IHazardNotifier
     private static int _index { get; set; }
     private Enum _substance { get; set; }
     private bool _isDangerous;
-    public LiquidContainer(double cargoWeight, double cargoHeight, double conteinerWeight, double depth, string seriesNumber, double maxLoad, PossibleProducts substance, bool isDangerous) : base(cargoWeight, cargoHeight, conteinerWeight, depth, seriesNumber, maxLoad)
+    public LiquidContainer(double cargoWeight, double cargoHeight, double conteinerWeight, double depth, double maxLoad, PossibleProducts substance, bool isDangerous) : base(cargoWeight, cargoHeight, conteinerWeight, depth, maxLoad)
     {
         SeriesNumber = ("KON-L-" + _index++);
         _substance = substance;
