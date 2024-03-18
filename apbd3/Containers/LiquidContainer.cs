@@ -24,15 +24,29 @@ public class LiquidContainer : Container, IHazardNotifier
     {
         if (_isDangerous && (_cargoWeight + cargoWeight) < _maxLoad / 2)
         {
+            Console.WriteLine("Load: " + cargoWeight);
             _cargoWeight += cargoWeight;
+            Console.WriteLine("Container: " + _cargoWeight);
         }
         else if(!_isDangerous && (_cargoWeight + cargoWeight) < _maxLoad * 0.9)
         {
+            Console.WriteLine("Load: " + cargoWeight);
             _cargoWeight += cargoWeight;
+            Console.WriteLine("Container: " + _cargoWeight);
         } 
         else
         {
             Console.WriteLine("Danger Load! Aborted");
         }
+    }
+    public string GetNumber()
+    {
+        return _seriesNumber;
+    }
+
+    public override void InfoContainer()
+    {
+        Console.WriteLine("Number: " + _seriesNumber + " " + _substance + " isDangerous: " + _isDangerous);
+        base.InfoContainer();
     }
 }

@@ -36,9 +36,14 @@ public abstract class Container : IContainer
 
     public virtual void Unload()
     {
+        Console.WriteLine("Unload");
         _cargoWeight = 0;
     }
 
+    public double GetWeight()
+    {
+        return _cargoWeight; 
+    }
     public virtual void Load(double cargoWeight)
     {
         if ((_cargoWeight + cargoWeight) > _maxLoad)
@@ -48,9 +53,17 @@ public abstract class Container : IContainer
         }
         else
         {
+            Console.WriteLine("Load: " + cargoWeight);
             _cargoWeight += cargoWeight;
+            Console.WriteLine("Container: " + _cargoWeight);
         }
-        
+
     }
 
+       
+    public virtual void InfoContainer()
+    {
+        Console.WriteLine("Weight: " + _cargoHeight + " Height: " + _cargoHeight + " Max Load: " + _maxLoad +
+        " Container Weight: " + _conteinerWeight + " Depth: " + _depth);
+    }
 }

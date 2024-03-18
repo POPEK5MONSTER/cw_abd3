@@ -27,5 +27,16 @@ public class CoolingConteiner : Container
         _substance = substance;
         _temerature = temerature;
     }
-    
+
+    public string GetNumber()
+    {
+        return _seriesNumber;
+    }
+
+    public override void InfoContainer()
+    {
+        Console.WriteLine(_substance + " tmp: " + _temerature + " Number: " + _seriesNumber);
+        Console.WriteLine(_productsList.Keys);
+        base.InfoContainer();
+    }
 }

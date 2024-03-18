@@ -18,11 +18,21 @@ public class GasConteiner : Container, IHazardNotifier
     public override void Unload()
     {
         _cargoWeight *= 0.05;
+        Console.WriteLine("Unload");
     }
 
-
+    public string GetNumber()
+    {
+        return _seriesNumber;
+    }
     public void DangerousSituation()
     {
         Console.WriteLine("Dangerous Situation: " + _seriesNumber);
+    }
+
+    public override void InfoContainer()
+    {
+        Console.WriteLine("Number: " + _seriesNumber + " " + _substance + " pressure: " + _pressure);
+        base.InfoContainer();
     }
 }
